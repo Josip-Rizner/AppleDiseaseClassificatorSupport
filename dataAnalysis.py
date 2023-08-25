@@ -12,8 +12,8 @@ data = data.to_numpy()
 #unique_labels = np.unique(labels)
 #sets = np.unique(data[:, [2]])
 
+descriptions = ["Nemoguće je prepoznati", "Hrđa jabuke i mrljavost jabuke", "Mrljavost jabuke", "Teško je prepoznati, ali mrljavost jabuke je najvjerojatnija bolest", "Zdravo", "Pepelnica", "Teško je prepoznati, ali pepelnica je najvjerojatnija bolest", "Hrđa jabuke", "Teško je prepoznati, ali hrđa jabuke je najvjerojatnija bolest", "Krastavost jabuke", "Krastavost jabuke i mrljavost jabuke", "Teško je prepoznati, ali krastavost jabuke i mrljavost jabuke su najvjerojatnije bolesti"]
 unique_labels = ["complex", "rust frog_eye_leaf_spot", "frog_eye_leaf_spot", "frog_eye_leaf_spot complex", "healthy", "powdery_mildew", "powdery_mildew complex", "rust", "rust complex", "scab", "scab frog_eye_leaf_spot", "scab frog_eye_leaf_spot complex"]
-
 
 
 pictures_per_class_train_dataset = [0] * 12
@@ -52,12 +52,12 @@ for picture in data:
 #pie.pie(pictures_per_class_train_dataset, labels = unique_labels, shadow = True)
 
 plt.figure(1)
-plt.barh(unique_labels, total, height = 0.9)
+plt.barh(descriptions, pictures_per_class_validation_dataset, height = 0.9)
 plt.show()
 
 
 plt.figure(2)
-plt.pie(total, labels = unique_labels, shadow = True)
+plt.pie(pictures_per_class_validation_dataset, labels = descriptions, shadow = True)
 plt.show()
 
 total = np.array(total)

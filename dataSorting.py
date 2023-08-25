@@ -11,9 +11,7 @@ data = data.to_numpy()
 
 labels = data[:, [1]]
 unique_labels = np.unique(labels)
-
 sets = np.unique(data[:, [2]])
-
 
 #Sorting pictures to the classes 
 if not os.path.exists("sorted_data"):
